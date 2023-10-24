@@ -66,37 +66,3 @@ function buttonAnimation(currentKey) {
     activeButton.classList.remove("pressed");
   }, 100);
 }
-
-//Constructor Functions
-/*
-function HouseKeeper(name, age, hasWorkPermit, languages) {
-  this.name = name;
-  this.age = age;
-  this.hasWorkPermit = hasWorkPermit;
-  this.languages = languages;
-}
-
-let houseKeeper1 = new HouseKeeper("Timmy", 19, true, ["French", "English"]);
-*/
-/*
-//eventlistner behind the scene
-
-function anotherAddEventListner(typeOfEventUserWants, callback) {
-  //Detect Event Code
-
-  var eventThatHappened = {
-    eventType: "keypress",
-    key: "s",
-    durationOfKeypress: 2,
-  };
-
-  if (eventThatHappened.eventType === typeOfEventUserWants) {
-    callback(eventThatHappened);
-  }
-}
-
-// what Coder will do
-anotherAddEventListner("keypress", function (event) {
-  console.log(event);
-});
-*/
