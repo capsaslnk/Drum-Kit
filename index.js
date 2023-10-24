@@ -5,6 +5,7 @@ for (let i = 0; i < document.querySelectorAll(".drum").length; i++) {
     let buttonInnerHtml = this.innerHTML;
 
     makeSound(buttonInnerHtml);
+    buttonAnimation(buttonInnerHtml);
   });
 }
 
@@ -12,6 +13,7 @@ for (let i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
 document.addEventListener("keypress", function (e) {
   makeSound(e.key);
+  buttonAnimation(e.key);
 });
 
 function makeSound(key) {
@@ -56,6 +58,15 @@ function makeSound(key) {
   }
 }
 
+function buttonAnimation(currentKey) {
+  let activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
+
+  setTimeout(function () {
+    activeButton.classList.remove("pressed");
+  }, 100);
+}
+
 //Constructor Functions
 /*
 function HouseKeeper(name, age, hasWorkPermit, languages) {
@@ -66,4 +77,26 @@ function HouseKeeper(name, age, hasWorkPermit, languages) {
 }
 
 let houseKeeper1 = new HouseKeeper("Timmy", 19, true, ["French", "English"]);
+*/
+/*
+//eventlistner behind the scene
+
+function anotherAddEventListner(typeOfEventUserWants, callback) {
+  //Detect Event Code
+
+  var eventThatHappened = {
+    eventType: "keypress",
+    key: "s",
+    durationOfKeypress: 2,
+  };
+
+  if (eventThatHappened.eventType === typeOfEventUserWants) {
+    callback(eventThatHappened);
+  }
+}
+
+// what Coder will do
+anotherAddEventListner("keypress", function (event) {
+  console.log(event);
+});
 */
